@@ -19,7 +19,7 @@
         <div>
             <h1> Catálogo de Jugadores </h1>
         </div>
-        <asp:GridView ID="GridView1" runat="server" Height="170px" Width="203px" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="sqlJugadores" GridLines="Horizontal">
+        <asp:GridView ID="GridView1" runat="server" Height="157px" Width="359px" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="sqlJugadores" GridLines="Horizontal">
             <Columns>
                 <asp:BoundField DataField="Numero" HeaderText="Numero" InsertVisible="False" ReadOnly="True" SortExpression="Numero" />
                 <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
@@ -37,7 +37,24 @@
             <SortedDescendingCellStyle BackColor="#E5E5E5" />
             <SortedDescendingHeaderStyle BackColor="#275353" />
         </asp:GridView>
-        <asp:SqlDataSource ID="sqlJugadores" runat="server" ConnectionString="<%$ ConnectionStrings:ViajesPedroConnectionString %>" SelectCommand="SELECT * FROM [Jugador]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="sqlJugadores" runat="server" ConnectionString="<%$ ConnectionStrings:ViajesPedroConnectionString %>" DeleteCommand="delete Jugador where Numero = @Numero" InsertCommand="insert into Jugador (@Nombre,@Clan,@Hechizo,@Edad)" SelectCommand="SELECT * FROM [Jugador]" UpdateCommand="update Jugador set Nombre=@Nombre, Clan=@Clan, Hechizo=@Hechizo, Edad=@Edad where Codigo=@Codigo">
+            <DeleteParameters>
+                <asp:ControlParameter ControlID="NumTxt" Name="Numero" PropertyName="Text" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:ControlParameter ControlID="NomTxt" Name="Nombre" PropertyName="Text" />
+                <asp:ControlParameter ControlID="ClanTxt" Name="Clan" PropertyName="Text" />
+                <asp:ControlParameter ControlID="HechTxt" Name="Hechizo" PropertyName="Text" />
+                <asp:ControlParameter ControlID="EdadTxt" Name="Edad" PropertyName="Text" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:ControlParameter ControlID="NomTxt" Name="Nombre" PropertyName="Text" />
+                <asp:ControlParameter ControlID="ClanTxt" Name="Clan" PropertyName="Text" />
+                <asp:ControlParameter ControlID="HechTxt" Name="Hechizo" PropertyName="Text" />
+                <asp:ControlParameter ControlID="EdadTxt" Name="Edad" PropertyName="Text" />
+                <asp:ControlParameter ControlID="NumTxt" Name="Codigo" PropertyName="Text" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
         <p>
             &nbsp;</p>
         <p>
