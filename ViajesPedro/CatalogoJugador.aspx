@@ -37,7 +37,7 @@
             <SortedDescendingCellStyle BackColor="#E5E5E5" />
             <SortedDescendingHeaderStyle BackColor="#275353" />
         </asp:GridView>
-        <asp:SqlDataSource ID="sqlJugadores" runat="server" ConnectionString="<%$ ConnectionStrings:ViajesPedroConnectionString %>" DeleteCommand="delete Jugador where Numero = @Numero" InsertCommand="insert into Jugador (@Nombre,@Clan,@Hechizo,@Edad)" SelectCommand="SELECT * FROM [Jugador]" UpdateCommand="update Jugador set Nombre=@Nombre, Clan=@Clan, Hechizo=@Hechizo, Edad=@Edad where Codigo=@Codigo">
+        <asp:SqlDataSource ID="sqlJugadores" runat="server" ConnectionString="<%$ ConnectionStrings:ViajesPedroConnectionString %>" DeleteCommand="delete Jugador where Numero = @Numero" InsertCommand="insert into Jugador (Nombre,Clan,Hechizo,Edad) values (@Nombre,@Clan,@Hechizo,@Edad)" SelectCommand="SELECT * FROM [Jugador]" UpdateCommand="update Jugador set Nombre=@Nombre, Clan=@Clan, Hechizo=@Hechizo, Edad=@Edad where Numero=@Numero">
             <DeleteParameters>
                 <asp:ControlParameter ControlID="NumTxt" Name="Numero" PropertyName="Text" />
             </DeleteParameters>
@@ -52,7 +52,7 @@
                 <asp:ControlParameter ControlID="ClanTxt" Name="Clan" PropertyName="Text" />
                 <asp:ControlParameter ControlID="HechTxt" Name="Hechizo" PropertyName="Text" />
                 <asp:ControlParameter ControlID="EdadTxt" Name="Edad" PropertyName="Text" />
-                <asp:ControlParameter ControlID="NumTxt" Name="Codigo" PropertyName="Text" />
+                <asp:ControlParameter ControlID="NumTxt" Name="Numero" PropertyName="Text" />
             </UpdateParameters>
         </asp:SqlDataSource>
         <p>
@@ -83,11 +83,11 @@
             <asp:TextBox ID="EdadTxt" runat="server"></asp:TextBox>
         </p>
         <p>
-            <asp:Button ID="BIngresar" runat="server" Text="Agregar" BackColor="#FFBEA8" Font-Bold="True" Font-Names="Constantia" ForeColor="#00C672" />
+            <asp:Button ID="BIngresar" runat="server" Text="Agregar" BackColor="#FFBEA8" Font-Bold="True" Font-Names="Constantia" ForeColor="#00C672" OnClick="BIngresar_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="BBorrar" runat="server" Text="Eliminar" BackColor="#FFBEA8" Font-Bold="True" Font-Names="Constantia" ForeColor="#00C672" />
+            <asp:Button ID="BBorrar" runat="server" Text="Eliminar" BackColor="#FFBEA8" Font-Bold="True" Font-Names="Constantia" ForeColor="#00C672" OnClick="BBorrar_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="BModificar" runat="server" Text="Button" BackColor="#FFBEA8" Font-Bold="True" Font-Names="Constantia" ForeColor="#00C672" />
+            <asp:Button ID="BModificar" runat="server" Text="Modificar" BackColor="#FFBEA8" Font-Bold="True" Font-Names="Constantia" ForeColor="#00C672" OnClick="BModificar_Click" />
         </p>
     </form>
 </body>

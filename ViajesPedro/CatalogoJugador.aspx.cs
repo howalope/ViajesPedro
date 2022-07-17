@@ -18,5 +18,21 @@ namespace ViajesPedro
         {
 
         }
+
+        protected void BIngresar_Click(object sender, EventArgs e)
+        {
+            sqlJugadores.Insert();
+        }
+
+        protected void BBorrar_Click(object sender, EventArgs e)
+        {
+            sqlJugadores.Delete();
+        }
+
+        protected void BModificar_Click(object sender, EventArgs e)
+        {
+            sqlJugadores.Update();
+        }
+
     }
 }
