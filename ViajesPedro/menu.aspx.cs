@@ -11,7 +11,7 @@ namespace ViajesPedro
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lpersonje.Text = ClsPersonaje.GetNombre();
         }
     }
 }

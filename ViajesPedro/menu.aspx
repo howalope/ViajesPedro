@@ -21,7 +21,16 @@
                         <a href="#">Portales</a>
                     </div>
                 </li>
+                <li>
+                    <br />
+                </li>
             </ul>
+            <p>
+                &nbsp;</p>
+            <p style="text-align: right">
+                Bienvenido:
+                <asp:Label ID="lpersonje" runat="server"></asp:Label>
+            </p>
         </div>
     </form>
 
@@ -30,4 +39,5 @@
     <button class="button button3">Modificar Personaje</button>
 
 </body>
+ 
 </html>
