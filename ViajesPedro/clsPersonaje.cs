@@ -10,19 +10,23 @@ namespace ViajesPedro
     {
         private static string nombre { get; set; }
         private static string hechizo { get; set; }
-
+        private static string clan { get; set; }
+        private static string edad { get; set; }
         //constructor
-        public ClsPersonaje(string nom, string hech)
+        public ClsPersonaje(string nom, string hech, string cla, string eda)
         {
             nombre = nom;
             hechizo = hech;
+            clan = cla;
+            edad = eda;
         }
        
         //Atributos de la clase
         public static string GetNombre() { return nombre; }
         public static string GetHechizo() { return hechizo; }
+        public static string GetClan() { return clan; }
+        public static string GetEdad() { return edad; }
 
-            
 
         //Set and get
         public static void setNombre(string nom)
@@ -32,8 +36,20 @@ namespace ViajesPedro
 
         public static void setHechizo(string hech)
             {
-                hechizo = hech;
+            hechizo = hech;
             }
+
+        public static void setClan(string cla)
+            {
+                clan = cla;
+            }
+
+        public static void setEdad(string eda)
+        {
+            edad = eda;
+        }
+
+
         public static Boolean AgregarPersonaje()
             {
                 Boolean existe = false;
@@ -42,8 +58,8 @@ namespace ViajesPedro
             try
             {
                 conexion.Open();
-                SqlCommand comando = new SqlCommand("insert into Jugador " + 
-                    "values('" + nombre + "','" + hechizo + "')", conexion);
+                SqlCommand comando = new SqlCommand("insert into Jugador (nombre, clan, hechizo, edad)  " + 
+                    "values('" + nombre + "','" + clan + "')" + hechizo + "')" + edad + "')", conexion);
                 comando.ExecuteNonQuery();
                 existe = true;
             } 

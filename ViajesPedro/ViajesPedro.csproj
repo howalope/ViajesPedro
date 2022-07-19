@@ -70,6 +70,7 @@
     <Content Include="CatalogoJugador.aspx" />
     <Content Include="css\main.css" />
     <Content Include="css\menuEstilos.css" />
+    <Content Include="css\menuVertical.css" />
     <Content Include="css\util.css" />
     <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
@@ -88,6 +89,7 @@
     <Content Include="js\main.js" />
     <Content Include="js\map-custom.js" />
     <Content Include="menu.aspx" />
+    <Content Include="Noticias.aspx" />
     <Content Include="vendor\animate\animate.css" />
     <Content Include="vendor\animsition\css\animsition.css" />
     <Content Include="vendor\animsition\css\animsition.min.css" />
@@ -142,6 +144,20 @@
     </Compile>
     <Compile Include="menu.aspx.designer.cs">
       <DependentUpon>menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipal.Master.cs">
+      <DependentUpon>MenuPrincipal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal.Master.designer.cs">
+      <DependentUpon>MenuPrincipal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Noticias.aspx.cs">
+      <DependentUpon>Noticias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Noticias.aspx.designer.cs">
+      <DependentUpon>Noticias.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -205,6 +221,7 @@
     <Content Include="fonts\source-sans-pro\SourceSansPro-Regular.ttf" />
     <Content Include="fonts\source-sans-pro\SourceSansPro-SemiBold.ttf" />
     <Content Include="fonts\source-sans-pro\SourceSansPro-SemiBoldItalic.ttf" />
+    <Content Include="MenuPrincipal.Master" />
     <None Include="packages.config" />
     <Content Include="vendor\bootstrap\css\bootstrap-grid.css.map" />
     <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css.map" />

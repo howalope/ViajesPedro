@@ -21,7 +21,16 @@ namespace ViajesPedro
 
         protected void BIngresar_Click(object sender, EventArgs e)
         {
-            sqlJugadores.Insert();
+            ClsPersonaje.setNombre(NomTxt.Text);
+            ClsPersonaje.setClan(ClanTxt.Text);
+            ClsPersonaje.setHechizo(HechTxt.Text);
+            ClsPersonaje.setEdad(EdadTxt.Text);
+
+
+            if (ClsPersonaje.AgregarPersonaje())
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Notify", "alert('Notification: Jugador agregado');", true);
+            }
         }
 
         protected void BBorrar_Click(object sender, EventArgs e)

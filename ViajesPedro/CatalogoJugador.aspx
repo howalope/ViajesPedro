@@ -80,7 +80,7 @@
         </p>
         <p>
             <span class="auto-style2"><strong>Edad:&nbsp;</strong>&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="EdadTxt" runat="server"></asp:TextBox>
+            <asp:TextBox ID="EdadTxt" runat="server"  CssClass="auto-style2" ></asp:TextBox>
         </p>
         <p>
             <asp:Button ID="BIngresar" runat="server" Text="Agregar" BackColor="#FFBEA8" Font-Bold="True" Font-Names="Constantia" ForeColor="#00C672" OnClick="BIngresar_Click" />
